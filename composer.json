@@ -1,0 +1,28 @@
+{
+    "name": "infyomlabs/adminlte-templates",
+    "description": "AdminLTE templates for InfyOm Laravel Generator",
+    "keywords": [
+        "infyom",
+        "laravel",
+        "generator",
+        "adminlte",
+        "templates",
+        "bootstrap"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mitul Golakiya",
+            "email": "me@mitul.me"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "InfyOm\\AdminLTETemplates\\": "src/"
+        }
+    }
+}
