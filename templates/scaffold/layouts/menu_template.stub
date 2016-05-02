@@ -1,3 +1,7 @@
-<li class="{{ Request::is('$MODEL_NAME_PLURAL_CAMEL$*') ? 'active' : '' }}">
-    <a href="{!! route('$ROUTES_AS_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') !!}"><i class="fa fa-edit"></i><span>$MODEL_NAME_PLURAL$</span></a>
+<li class="treeview  {{ Request::is('$MODEL_NAME_PLURAL_CAMEL$*') ? 'active' : '' }}">
+    <a href="#"><span>$MODEL_NAME_PLURAL$</span> <i class="fa fa-angle-left pull-right"></i></a>
+    <ul class="treeview-menu">
+      <li><a href="{!! route('$ROUTES_AS_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') !!}">List $MODEL_NAME_PLURAL$</a></li>
+      <li><a href="{!! route('$ROUTES_AS_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create') !!}">New $MODEL_NAME$</a></li>
+    </ul>
 </li>
