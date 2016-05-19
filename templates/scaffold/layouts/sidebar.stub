@@ -34,6 +34,16 @@
 
         <ul class="sidebar-menu">
             @include('layouts.menu')
+            {{-- start of example menu items:REMOVE THIS SECTION WHEN READY --}}
+            <li><a href="#"><span>Example Link</span></a></li>
+            <li class="treeview">
+                <a href="#"><span>Example Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                  <li><a href="#">Link in level 2</a></li>
+                  <li><a href="#">Link in level 2</a></li>
+                </ul>
+            </li>
+            {{-- end of example menu items: END OF SECTION TO REMOVE --}}
         </ul>
         <!-- /.sidebar-menu -->
     </section>
