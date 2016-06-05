@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
- <section class="content-header">
+    <section class="content-header">
         <h1>
             $MODEL_NAME$
         </h1>
@@ -14,7 +14,7 @@
                 <div class="row">
                     {!! Form::open(['route' => '$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store']) !!}
 
-                              @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.fields')
+                        @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.fields')
 
                     {!! Form::close() !!}
                 </div>
