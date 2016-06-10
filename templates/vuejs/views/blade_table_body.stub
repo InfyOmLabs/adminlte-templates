@@ -41,7 +41,7 @@
 
 <div class="table-responsive" id="$MODEL_NAME_PLURAL_CAMEL$-table">
     <vuetable v-ref:vuetable
-        api-url="{{ route('api.v1.$MODEL_NAME_PLURAL_CAMEL$.index') }}"
+        api-url="{{ route('api.v1.$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}"
         :fields="columns"
         pagination-path=""
         :fields="fields"

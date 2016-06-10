@@ -29,11 +29,11 @@
         var token = '{{ csrf_token() }}';
         var fieldInitOrder = 'id';
         var apiUrl = { 
-            show:  "{{ route('$API_PREFIX$.$API_VERSION$.$MODEL_NAME_PLURAL_CAMEL$.show') }}/",
-            index: "{{ route('$API_PREFIX$.$API_VERSION$.$MODEL_NAME_PLURAL_CAMEL$.index') }}",  
-            store: "{{ route('$API_PREFIX$.$API_VERSION$.$MODEL_NAME_PLURAL_CAMEL$.store') }}",  
-            update: "{{ route('$API_PREFIX$.$API_VERSION$.$MODEL_NAME_PLURAL_CAMEL$.update') }}/",  
-            delete: "{{ route('$API_PREFIX$.$API_VERSION$.$MODEL_NAME_PLURAL_CAMEL$.delete') }}/"
+            show:  "{{ route('$API_PREFIX$.$API_VERSION$.$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show') }}/",
+            index: "{{ route('$API_PREFIX$.$API_VERSION$.$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}",  
+            store: "{{ route('$API_PREFIX$.$API_VERSION$.$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store') }}",  
+            update: "{{ route('$API_PREFIX$.$API_VERSION$.$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.update') }}/",  
+            delete: "{{ route('$API_PREFIX$.$API_VERSION$.$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.delete') }}/"
         };
     </script>
     <script src="/app/js/crud.js"></script>    
