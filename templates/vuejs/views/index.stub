@@ -11,14 +11,14 @@
         <div class="content" style="padding-top: 30px;">
             <div class="box box-primary">
                 <div class="box-body">
-                    @include('$MODEL_NAME_PLURAL_CAMEL$.table')
+                    @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.table')
                 </div>
             </div>
         </div>
         <!-- --------- Modals ---------- -->
-        @include('$MODEL_NAME_PLURAL_CAMEL$.form')
-        @include('$MODEL_NAME_PLURAL_CAMEL$.delete')
-        @include('$MODEL_NAME_PLURAL_CAMEL$.show')
+        @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.form')
+        @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.delete')
+        @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show')
         @include('layouts.modal.info')        
     </div>
 @endsection

@@ -5,5 +5,5 @@ $MODEL_NAME$ Form
 @stop
 
 @section('modal-form-content')
-	@include('$MODEL_NAME_PLURAL_CAMEL$.fields')
+	@include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.fields')
 @stop
