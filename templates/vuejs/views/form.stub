@@ -1,0 +1,9 @@
+@extends('layouts.modal.form')
+
+@section('modal-form-title')
+$MODEL_NAME$ Form
+@stop
+
+@section('modal-form-content')
+	@include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.fields')
+@stop
