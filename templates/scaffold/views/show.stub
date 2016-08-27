@@ -10,7 +10,7 @@
         <div class="box box-primary">
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
-                    @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show_fields')
+                    @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.show_fields')
                     <a href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.index') !!}" class="btn btn-default">Back</a>
                 </div>
             </div>
