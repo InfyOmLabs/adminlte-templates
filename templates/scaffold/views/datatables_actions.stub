@@ -9,8 +9,7 @@
     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', [
         'type' => 'button',
         'class' => 'btn btn-danger btn-xs',
-        'onclick' => "return confirm('". ucfirst( trans('common.delete') )."?')"]);"
-    ]) !!}
+        'onclick' => "return confirm('". ucfirst( trans('common.delete') )."?')"]) !!}
 
 </div>
 {!! Form::close() !!}
