@@ -12,7 +12,7 @@
                 <div class="row" style="padding-left: 20px">
                     @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.show_fields')
                     <a href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') !!}" class="btn btn-default">
-                        {{ ucfirst( trans('common.back') )}}
+                       <i class="fa fa-arrow-left"></i>  {{ ucfirst( trans('common.back') )}}
                     </a>
                 </div>
             </div>
