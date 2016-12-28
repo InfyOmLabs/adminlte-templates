@@ -1,7 +1,9 @@
 <table class="table table-responsive">
     <thead>
-        $FIELD_HEADERS$
-        <th colspan="3">Action</th>
+        <tr>
+            $FIELD_HEADERS$
+            <th colspan="3">Action</th>
+        </tr>
     </thead>
     <tbody>
     @foreach($$MODEL_NAME_PLURAL_CAMEL$ as $$MODEL_NAME_CAMEL$)
