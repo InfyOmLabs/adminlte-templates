@@ -33,7 +33,20 @@
         <!-- Sidebar Menu -->
 
         <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="{{ Request::is('admin/') ? 'active' : '' }}"><a href="{!! url('/admin') !!}"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
             @include('layouts.menu')
+            {{-- start of example menu items:REMOVE THIS SECTION WHEN READY --}}
+            <li class="header">EXAMPLE STRUCTURE</li>
+            <li><a href="#"><span>Example Link</span></a></li>
+            <li class="treeview">
+                <a href="#"><span>Example Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                  <li><a href="#">Link in level 2</a></li>
+                  <li><a href="#">Link in level 2</a></li>
+                </ul>
+            </li>
+            {{-- end of example menu items: END OF SECTION TO REMOVE --}}
         </ul>
         <!-- /.sidebar-menu -->
     </section>
