@@ -1,6 +1,6 @@
 {
-    "name": "infyomlabs/adminlte-templates",
-    "description": "AdminLTE templates for InfyOm Laravel Generator",
+    "name": "rafaelqm/adminlte-templates",
+    "description": "Form - Customized - AdminLTE templates for InfyOm Laravel Generator",
     "keywords": [
         "infyom",
         "laravel",
