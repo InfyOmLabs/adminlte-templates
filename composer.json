@@ -24,5 +24,12 @@
         "psr-4": {
             "InfyOm\\AdminLTETemplates\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "\\InfyOm\\AdminLTETemplates\\AdminLTETemplatesServiceProvider"
+            ]
+        }
     }
 }
