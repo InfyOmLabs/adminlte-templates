@@ -1,7 +1,7 @@
 @extends('layouts.modal.form')
 
 @section('modal-form-title')
-$MODEL_NAME$ Form
+$MODEL_NAME$ {!! __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.form') !!}
 @stop
 
 @section('modal-form-content')

@@ -1,6 +1,6 @@
 <!-- $FIELD_NAME_TITLE$ Field -->
 <div class="form-group col-sm-6">
-    <label for="$FIELD_NAME$">$FIELD_NAME_TITLE$:</label>
+    <label for="$FIELD_NAME$">{!! __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.$FIELD_NAME$') !!}:</label>
 	<select v-model="row.$FIELD_NAME$" v-validate:$FIELD_NAME$="{ required: true, minlength: 3, maxlength: 128 }">
 		<option v-for="option in options" v-bind:value="option.value">
 			@{{ option.text }}

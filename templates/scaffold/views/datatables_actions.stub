@@ -9,7 +9,7 @@
     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', [
         'type' => 'submit',
         'class' => 'btn btn-danger btn-xs',
-        'onclick' => "return confirm('Are you sure?')"
+        'onclick' => "return confirm('".__('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.areyousure')."')"
     ]) !!}
 </div>
 {!! Form::close() !!}

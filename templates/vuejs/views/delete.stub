@@ -1,5 +1,5 @@
 @extends('layouts.modal.delete')
 
 @section('modal-delete-title')
-Delete $MODEL_NAME$!
+{!! __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.delete') !!} $MODEL_NAME$!
 @stop
