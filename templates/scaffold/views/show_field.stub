@@ -1,5 +1,5 @@
-<!-- __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.$FIELD_NAME$') Field -->
+<!-- __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.field.$FIELD_NAME$') Field -->
 <div class="form-group">
-    {!! Form::label('$FIELD_NAME$', __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.$FIELD_NAME$').':') !!}
+    {!! Form::label('$FIELD_NAME$', __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.field.$FIELD_NAME$').':') !!}
     <p>{!! $$MODEL_NAME_CAMEL$->$FIELD_NAME$ !!}</p>
 </div>
