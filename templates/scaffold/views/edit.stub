@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            $MODEL_NAME_HUMAN$
+            {!! trans_choice('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.model.name', 1) !!}
         </h1>
    </section>
    <div class="content">
