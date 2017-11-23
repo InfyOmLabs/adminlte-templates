@@ -18,6 +18,10 @@
                     @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.table')
             </div>
         </div>
+        <!--pagination -->
+        <div class="text-center">
+            @include('adminlte-templates::common.paginate', ['records' => $$MODEL_NAME_PLURAL_CAMEL$])
+        </div>        
     </div>
 @endsection
 
