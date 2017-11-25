@@ -18,6 +18,9 @@
                     @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.table')
             </div>
         </div>
+        <div class="text-center">
+        $PAGINATE$
+        </div>
     </div>
 @endsection
 
