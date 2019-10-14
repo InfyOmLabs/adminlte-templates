@@ -1,5 +1,6 @@
 {
     "name": "infyomlabs/adminlte-templates",
+    "type": "library",
     "description": "AdminLTE templates for InfyOm Laravel Generator",
     "keywords": [
         "infyom",
