@@ -1,0 +1,8 @@
+<!-- $FIELD_NAME_TITLE$ Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('$FIELD_NAME$', '$FIELD_NAME_TITLE$:') !!}
+    <label class="checkbox-inline">
+        {!! Form::hidden('$FIELD_NAME$', false) !!}
+        {!! Form::checkbox('$FIELD_NAME$', $CHECKBOX_VALUE$, null) !!} $VALUE$
+    </label>
+</div>

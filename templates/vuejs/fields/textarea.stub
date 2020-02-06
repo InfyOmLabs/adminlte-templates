@@ -1,0 +1,9 @@
+<!-- $FIELD_NAME_TITLE$ Field -->
+<div class="form-group col-sm-6">
+    <label for="$FIELD_NAME$">$FIELD_NAME_TITLE$:</label>
+    <textarea class="form-control" v-model="row.$FIELD_NAME$" v-validate:$FIELD_NAME$="{ $VALIDATION_RULES$ }" data-type="text">
+    </textarea>
+    <div v-if="$validation.$FIELD_NAME$.invalid" class="alert alert-danger" role="alert">
+	$VALIDATION_MESSAGES$	
+	</div>
+</div>	
