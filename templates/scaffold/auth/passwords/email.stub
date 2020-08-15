@@ -54,14 +54,14 @@
                 <div class="input-group mb-3">
                     <input type="email"
                            name="email"
-                           class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                           class="form-control @error('email') is-invalid @enderror"
                            placeholder="Email">
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-envelope"></span></div>
                     </div>
-                    @if ($errors->has('email'))
-                        <span class="error invalid-feedback">{{ $errors->first('email') }}</span>
-                    @endif
+                    @error('email')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="row">
