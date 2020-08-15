@@ -11,26 +11,26 @@
         </div>
     </section>
 
-    <div class="content px-3>
+    <div class="content px-3">
 
         @include('adminlte-templates::common.errors')
 
-            <div class="card">
+        <div class="card">
 
-                {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'patch'$FILES$]) !!}
+            {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'patch'$FILES$]) !!}
 
-                <div class="card-body">
-                    <div class="row">
-                        @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
-                    </div>
+            <div class="card-body">
+                <div class="row">
+                    @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
                 </div>
+            </div>
 
-                <div class="card-footer">
-                    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                    <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}" class="btn btn-default float-right">Cancel</a>
-                </div>
+            <div class="card-footer">
+                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}" class="btn btn-default float-right">Cancel</a>
+            </div>
 
-               {!! Form::close() !!}
+           {!! Form::close() !!}
 
         </div>
     </div>
