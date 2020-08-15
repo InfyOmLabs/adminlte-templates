@@ -49,6 +49,7 @@
                 <div class="input-group mb-3">
                     <input type="email"
                            name="email"
+                           value="{{ $email ?? old('email') }}"
                            class="form-control @error('email') is-invalid @enderror"
                            placeholder="Email">
                     <div class="input-group-append">
