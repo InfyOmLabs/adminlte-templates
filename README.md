@@ -9,7 +9,7 @@ AdminLTE Templates for InfyOm Laravel Generator
 [![License](https://poser.pugx.org/infyomlabs/adminlte-templates/license)](https://packagist.org/packages/infyomlabs/adminlte-templates)
 
 Templates for [AdminLTE Theme](https://adminlte.io/) for InfyOm Laravel Generator.  
-Read [Documentation](https://infyom.com/open-source/laravelgenerator/docs/8.0/adminlte-templates) for detailed installation steps and usage.
+Read [Documentation](https://infyom.com/open-source/laravelgenerator/docs/6.0/adminlte-templates) for detailed installation steps and usage.
 
 ## Support Us
 
