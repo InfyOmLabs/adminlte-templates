@@ -32,5 +32,11 @@
                 "\\InfyOm\\AdminLTETemplates\\AdminLTETemplatesServiceProvider"
             ]
         }
-    }
+    },
+    "funding": [
+        {
+            "type": "opencollective",
+            "url": "https://opencollective.com/infyomlabs"
+        }
+    ]
 }
