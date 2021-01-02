@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ config('app.name') }} | Registration Page</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -29,38 +29,27 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
-<body class="hold-transition register-page">
-<div class="register-box">
-    <div class="register-logo">
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
         <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
     </div>
 
     <div class="card">
-        <div class="card-body register-card-body">
-            <p class="login-box-msg">Register a new membership</p>
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">You are only one step a way from your new password, recover your password now.</p>
 
-            <form method="post" action="{{ route('register') }}">
+            <form action="{{ route('password.update') }}" method="POST">
                 @csrf
 
-                <div class="input-group mb-3">
-                    <input type="text"
-                           name="name"
-                           class="form-control @error('name') is-invalid @enderror"
-                           value="{{ old('name') }}"
-                           placeholder="Full name">
-                    <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-user"></span></div>
-                    </div>
-                    @error('name')
-                    <span class="error invalid-feedback">{{ $message }}</span>
-                    @enderror
-                </div>
+                <input type="hidden" name="token" value="{{ $token }}">
 
                 <div class="input-group mb-3">
                     <input type="email"
                            name="email"
-                           value="{{ old('email') }}"
+                           value="{{ $email ?? old('email') }}"
                            class="form-control @error('email') is-invalid @enderror"
                            placeholder="Email">
                     <div class="input-group-append">
@@ -88,37 +77,28 @@
                     <input type="password"
                            name="password_confirmation"
                            class="form-control"
-                           placeholder="Retype password">
+                           placeholder="Confirm Password">
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-lock"></span></div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-8">
-                        <div class="icheck-primary">
-                            <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-                            <label for="agreeTerms">
-                                I agree to the <a href="#">terms</a>
-                            </label>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
 
-            <a href="{{ route('login') }}" class="text-center">I already have a membership</a>
+            <p class="mt-3 mb-1">
+                <a href="{{ route('login') }}">Login</a>
+            </p>
         </div>
-        <!-- /.form-box -->
-    </div><!-- /.card -->
+        <!-- /.login-card-body -->
+    </div>
 
-    <!-- /.form-box -->
 </div>
-<!-- /.register-box -->
 
 <!-- AdminLTE App -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"

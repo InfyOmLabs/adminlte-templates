@@ -3,6 +3,6 @@
     {!! Form::label('$FIELD_NAME$', __('models/$MODEL_NAME_PLURAL_CAMEL$.fields.$FIELD_NAME$').':') !!}
     <label class="checkbox-inline">
         {!! Form::hidden('$FIELD_NAME$', 0) !!}
-        {!! Form::checkbox('$FIELD_NAME$', 1, null,  ['data-toggle' => 'toggle']) !!}
+        {!! Form::checkbox('$FIELD_NAME$', 1, null,  ['data-bootstrap-switch']) !!}
     </label>
 </div>
