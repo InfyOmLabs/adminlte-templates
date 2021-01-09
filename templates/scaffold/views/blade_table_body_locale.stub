@@ -1,0 +1,26 @@
+<div class="table-responsive">
+    <table class="table" id="$MODEL_NAME_PLURAL_CAMEL$-table">
+        <thead>
+            <tr>
+                $FIELD_HEADERS$
+                <th colspan="3">@lang('crud.action')</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach($$MODEL_NAME_PLURAL_CAMEL$ as $$MODEL_NAME_CAMEL$)
+            <tr>
+                $FIELD_BODY$
+                <td>
+                    {!! Form::open(['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.destroy', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'delete']) !!}
+                    <div class='btn-group'>
+                        <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show', [$$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+                        <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit', [$$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+                        {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => 'return confirm("'.__('crud.are_you_sure').'")']) !!}
+                    </div>
+                    {!! Form::close() !!}
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+</div>

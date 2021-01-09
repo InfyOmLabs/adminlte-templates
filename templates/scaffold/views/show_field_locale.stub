@@ -1,0 +1,5 @@
+<!-- $FIELD_NAME_TITLE$ Field -->
+<div class="form-group">
+    {!! Form::label('$FIELD_NAME$', __('models/$MODEL_NAME_PLURAL_CAMEL$.fields.$FIELD_NAME$').':') !!}
+    <p>{{ $$MODEL_NAME_CAMEL$->$FIELD_NAME$ }}</p>
+</div>

@@ -1,0 +1,3 @@
+<li class="{{ Request::is('$ROUTE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$*') ? 'active' : '' }}">
+    <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}"><i class="fa fa-edit"></i><span>@lang('models/$MODEL_NAME_PLURAL_CAMEL$.plural')</span></a>
+</li>

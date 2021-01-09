@@ -1,0 +1,1 @@
+'$FIELD_NAME$' => new Column(['title' => __('models/$MODEL_NAME_PLURAL_CAMEL$.fields.$FIELD_NAME$'), 'data' => '$FIELD_NAME$'$SEARCHABLE$])

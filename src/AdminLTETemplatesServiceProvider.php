@@ -2,6 +2,7 @@
 
 namespace InfyOm\AdminLTETemplates;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AdminLTETemplatesServiceProvider extends ServiceProvider
@@ -17,6 +18,9 @@ class AdminLTETemplatesServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../views' => base_path('resources/views/vendor/adminlte-templates')
         ]);
+
+        Paginator::defaultView('adminlte-templates::common.paginator');
+        Paginator::defaultSimpleView('adminlte-templates::common.simple_paginator');
     }
 
     /**
