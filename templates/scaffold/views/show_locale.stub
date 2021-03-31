@@ -2,11 +2,6 @@
 
 @section('content')
     <section class="content-header">
-        <h1>
-            @lang('models/$MODEL_NAME_PLURAL_CAMEL$.singular@extends('layouts.app')
-
-@section('content')
-    <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
@@ -31,22 +26,6 @@
                 </div>
             </div>
 
-        </div>
-    </div>
-@endsection
-')
-        </h1>
-    </section>
-    <div class="content">
-        <div class="box box-primary">
-            <div class="box-body">
-                <div class="row" style="padding-left: 20px">
-                    @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.show_fields')
-                    <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}" class="btn btn-default">
-                        @lang('crud.back')
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 @endsection
