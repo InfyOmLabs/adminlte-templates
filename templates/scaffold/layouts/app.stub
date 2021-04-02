@@ -147,7 +147,7 @@
     });
 </script>
 
-@yield('third_party_scripts')
+@stack('third_party_scripts')
 
 @stack('page_scripts')
 </body>
