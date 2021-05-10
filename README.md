@@ -32,7 +32,7 @@ You can support us by either sponsoring us or buying one of our paid products. O
 
 ### Buy our Paid Products
 
-[![InfyJobs](https://assets.infyom.com/open-source/infyjobs-banner.png)](https://bit.ly/3gXar4F)
+[![InfyJobs](https://assets.infyom.com/open-source/infyjobs-banner.png)](https://1.envato.market/P0ONVj)
 
 You can also check out our other paid products on [CodeCanyon](https://codecanyon.net/user/infyomlabs/portfolio).
 
