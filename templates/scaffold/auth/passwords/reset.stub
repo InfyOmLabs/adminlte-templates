@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ config('app.name') }}</title>
+    <title>{{ config('app.name') }} | Password Reset</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -39,7 +39,9 @@
 
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">You are only one step a way from your new password, recover your password now.</p>
+            <p class="login-box-msg">
+                You are only one step a way from your new password, recover your password now.
+            </p>
 
             <form action="{{ route('password.update') }}" method="POST">
                 @csrf
@@ -66,7 +68,9 @@
                            class="form-control @error('password') is-invalid @enderror"
                            placeholder="Password">
                     <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-lock"></span></div>
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
                     </div>
                     @error('password')
                     <span class="error invalid-feedback">{{ $message }}</span>
@@ -79,7 +83,9 @@
                            class="form-control"
                            placeholder="Confirm Password">
                     <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-lock"></span></div>
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
                     </div>
                 </div>
 
@@ -95,7 +101,7 @@
                 <a href="{{ route('login') }}">Login</a>
             </p>
         </div>
-        <!-- /.login-card-body -->
+        <!-- /.reset-card-body -->
     </div>
 
 </div>
@@ -104,6 +110,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"
         integrity="sha512-++c7zGcm18AhH83pOIETVReg0dr1Yn8XTRw+0bWSIWAVCAwz1s2PwnSj4z/OOyKlwSXc4RLg3nnjR22q0dhEyA=="
         crossorigin="anonymous"></script>
-
 </body>
 </html>
