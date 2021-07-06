@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="text-center">
-        $PAGINATE$
+          $PAGINATE$
         </div>
     </div>
 @endsection

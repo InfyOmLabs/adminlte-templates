@@ -57,10 +57,12 @@
                            class="form-control @error('email') is-invalid @enderror"
                            placeholder="Email">
                     <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-envelope"></span></div>
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
                     </div>
                     @error('email')
-                    <span class="error invalid-feedback">{{ $message }}</span>
+                        <span class="error invalid-feedback">{{ $message }}</span>
                     @enderror
                 </div>
 
@@ -85,9 +87,9 @@
 <!-- /.login-box -->
 
 <!-- AdminLTE App -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js"
         integrity="sha512-AJUWwfMxFuQLv1iPZOTZX0N/jTCIrLxyZjTRKQostNU71MzZTEPHjajSK20Kj1TwJELpP7gl+ShXw5brpnKwEg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 </body>
 </html>
