@@ -27,7 +27,7 @@
             <div class="card-body p-0">
                 @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.table')
 
-                <div class="card-footer clearfix float-right">
+                <div class="card-footer clearfix">
                     <div class="float-right">
                         $PAGINATE$
                     </div>
