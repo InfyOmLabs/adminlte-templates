@@ -8,15 +8,12 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
           integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Theme style -->
+    <!-- AdminLTE -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/css/adminlte.min.css"
           integrity="sha512-mxrUXSjrxl8vm5GwafxcqTrEwO1/oBNU25l20GODsysHReZo4uhVISzAKzaABH6/tTfAxZrY2FprmeAP5UZY8A=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -36,81 +33,96 @@
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="{{ url('/home') }}"><b>InfyOm </b>Generator</a>
+        <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
     </div>
 
-    <div class="register-box-body">
-        <p class="login-box-msg">@lang('auth.registration.title')</p>
+    <div class="card">
+        <div class="card-body register-card-body">
+            <p class="login-box-msg">@lang('auth.registration.title')</p>
 
-        <form method="post" action="{{ url('/register') }}">
-            @csrf
+            <form method="post" action="{{ route('register') }}">
+                @csrf
 
-            <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
-                <input type="text" class="form-control" name="name" value="{{ old('name') }}"
-                       placeholder="@lang('auth.full_name')">
-                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                <div class="input-group mb-3">
+                    <input type="text"
+                           name="name"
+                           class="form-control @error('name') is-invalid @enderror"
+                           value="{{ old('name') }}"
+                           placeholder="@lang('auth.full_name')">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                    @error('name')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
 
-                @if ($errors->has('name'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('name') }}</strong>
-                    </span>
-                @endif
-            </div>
+                <div class="input-group mb-3">
+                    <input type="email"
+                           name="email"
+                           value="{{ old('email') }}"
+                           class="form-control @error('email') is-invalid @enderror"
+                           placeholder="@lang('auth.email')">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                    @error('email')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
 
-            <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
-                <input type="email" class="form-control" name="email" value="{{ old('email') }}"
-                       placeholder="@lang('auth.email')">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <div class="input-group mb-3">
+                    <input type="password"
+                           name="password"
+                           class="form-control @error('password') is-invalid @enderror"
+                           placeholder="@lang('auth.password')">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                    @error('password')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
 
-                @if ($errors->has('email'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('email') }}</strong>
-                    </span>
-                @endif
-            </div>
-
-            <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-                <input type="password" class="form-control" name="password" placeholder="@lang('auth.password')">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-
-                @if ($errors->has('password'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('password') }}</strong>
-                    </span>
-                @endif
-            </div>
-
-            <div class="form-group has-feedback{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                <input type="password" name="password_confirmation" class="form-control"
-                       placeholder="@lang('auth.confirm_password')">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-
-                @if ($errors->has('password_confirmation'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                    </span>
-                @endif
-            </div>
-
-            <div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox"> @lang('auth.registration.i_agree') <a
-                                    href="#">@lang('auth.registration.terms')</a>
-                        </label>
+                <div class="input-group mb-3">
+                    <input type="password"
+                           name="password_confirmation"
+                           class="form-control"
+                           placeholder="@lang('auth.confirm_password')">
+                    <div class="input-group-append">
+                        <div class="input-group-text"><span class="fas fa-lock"></span></div>
                     </div>
                 </div>
-                <!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">@lang('auth.register')</button>
-                </div>
-                <!-- /.col -->
-            </div>
-        </form>
 
-        <a href="{{ url('/login') }}" class="text-center">@lang('auth.registration.have_membership')</a>
-    </div>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="icheck-primary">
+                            <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+                            <label for="agreeTerms">
+                                @lang('auth.registration.i_agree')
+                                <a href="#">@lang('auth.registration.terms')</a>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block">>@lang('auth.register')</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+            <a href="{{ route('login') }}" class="text-center">@lang('auth.registration.have_membership')</a>
+        </div>
+        <!-- /.form-box -->
+    </div><!-- /.card -->
+
     <!-- /.form-box -->
 </div>
 <!-- /.register-box -->
