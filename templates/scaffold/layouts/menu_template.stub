@@ -1,7 +1,0 @@
-<li class="nav-item">
-    <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}"
-       class="nav-link {{ Request::is('$ROUTE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$*') ? 'active' : '' }}">
-        <p>$MODEL_NAME_PLURAL_HUMAN$</p>
-    </a>
-</li>
-
