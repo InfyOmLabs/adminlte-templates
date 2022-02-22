@@ -20,7 +20,7 @@
     "require": {
         "php": "^8.0",
         "illuminate/support": "^9.0",
-        "infyomlabs/laravel-ui-adminlte": "4.x-dev"
+        "infyomlabs/laravel-ui-adminlte": "dev-master"
     },
     "autoload": {
         "psr-4": {
@@ -39,5 +39,7 @@
             "type": "opencollective",
             "url": "https://opencollective.com/infyomlabs"
         }
-    ]
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
