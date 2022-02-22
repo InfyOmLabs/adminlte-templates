@@ -16,7 +16,7 @@ class AdminLTETemplatesServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../views', 'adminlte-templates');
         $this->publishes([
-            __DIR__ . '/../views' => base_path('resources/views/vendor/adminlte-templates')
+            __DIR__.'/../views' => base_path('resources/views/vendor/adminlte-templates'),
         ]);
 
         Paginator::defaultView('adminlte-templates::common.paginator');
