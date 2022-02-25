@@ -20,7 +20,7 @@
     "require": {
         "php": "^8.0",
         "illuminate/support": "^9.0",
-        "infyomlabs/laravel-ui-adminlte": "dev-master"
+        "infyomlabs/laravel-ui-adminlte": "^4.0"
     },
     "autoload": {
         "psr-4": {
