@@ -1,41 +1,118 @@
-@extends('layouts.app')
-
+@extends('layouts.master')
+@section('title')
+    $MODEL_NAME_PLURAL_HUMAN$
+@endsection
+@section('css')
+    <link href="{{ URL::asset('/assets/libs/datatables.net-bs4/datatables.net-bs4.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('assets/libs/datatables.net-responsive-bs4/datatables.net-responsive-bs4.min.css') }}"
+        rel="stylesheet" type="text/css" />
+@endsection
 @section('content')
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>$MODEL_NAME_PLURAL_HUMAN$</h1>
-                </div>
-                <div class="col-sm-6">
-                    <a class="btn btn-primary float-right"
-                       href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create') }}">
-                        Add New
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    @component('components.breadcrumb')
+        @slot('li_1')
+            $MODEL_NAME_PLURAL_HUMAN$
+        @endslot
+        @slot('title')
+            Gestion des $MODEL_NAME_PLURAL_HUMAN$
+        @endslot
+    @endcomponent
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card mb-0">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <h5 class="card-title">$MODEL_NAME_PLURAL_HUMAN$
+                                <!-- <span class="text-muted fw-normal ms-2">(834)</span> -->
+                                </h5>
+                            </div>
+                        </div>
 
-    <div class="content px-3">
+                        <div class="col-md-6">
+                            <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
+                                <div>
+                                    <ul class="nav nav-pills">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="apps-contacts-list" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="List"><i class="bx bx-list-ul"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="apps-contacts-grid" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Grid"><i class="bx bx-grid-alt"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <a href="#" id="new-$MODEL_NAME_PLURAL_CAMEL$" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#new$MODEL_NAME_PLURAL_CAMEL$"><i class="bx bx-plus me-1"></i> Add New</a>
+                                </div>
 
-        @include('flash::message')
+                                <div class="dropdown">
+                                    <a class="btn btn-link text-muted py-1 font-size-16 shadow-none dropdown-toggle"
+                                        href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bx bx-dots-horizontal-rounded"></i>
+                                    </a>
 
-        <div class="clearfix"></div>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">supprimer</a></li>
+                                        <li><a class="dropdown-item" href="#">modifier</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </div>
+                            </div>
 
-        <div class="card">
-            <div class="card-body p-0">
-                @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.table')
-
-                <div class="card-footer clearfix">
-                    <div class="float-right">
-                        $PAGINATE$
+                        </div>
                     </div>
+                    <!-- end row -->
+
+                    <div class="table-responsive mb-4">
+                        @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.table')
+                        <!-- end table -->
+                    </div>
+                    <!-- end table responsive -->
                 </div>
             </div>
-
         </div>
     </div>
+    <!-- add new  $MODEL_NAME_PLURAL_CAMEL$-->
+    <div id="new$MODEL_NAME_PLURAL_CAMEL$" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" data-bs-scroll="true">
+        <div class="modal-dialog">
+            {!! Form::open(['route' => '$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store'$FILES$]) !!}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Nouvel $MODEL_NAME_PLURAL_CAMEL$</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="card-body">
+
+                        <div class="row">
+                            @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+                        </div>
+
+                    </div>
+                    <!-- end row -->
+                </div>
+                <div class="modal-footer">
+                    {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary']) !!}
+                    <a class="btn btn-default" data-bs-dismiss="modal" aria-label="Close">Annuler</a>
+                    </div>
+            </div><!-- /.modal-content -->
+            {!! Form::close() !!}
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+
 
 @endsection
-
+@section('script')
+    <script src="{{ URL::asset('assets/libs/datatables.net/datatables.net.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/libs/datatables.net-bs4/datatables.net-bs4.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/libs/datatables.net-responsive/datatables.net-responsive.min.js') }}"></script> --}}
+    <script src="{{ URL::asset('/assets/js/app.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/libs/alertifyjs/alertifyjs.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/pages/datatable-pages.init.js') }}"></script>
+@endsection

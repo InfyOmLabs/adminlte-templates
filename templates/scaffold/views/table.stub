@@ -1,30 +1,107 @@
-<table class="table table-responsive">
-    <thead>
-    <tr>
-        $FIELD_HEADERS$
-        <th colspan="3">Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach($$MODEL_NAME_PLURAL_CAMEL$ as $$MODEL_NAME_CAMEL$)
-        <tr>
-            $FIELD_BODY$
-            <td>
-                {!! Form::open(['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.destroy', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'delete']) !!}
-                <div class='btn-group'>
-                    <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show', [$$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$]) }}"
-                       class='btn btn-default btn-xs'>
-                        <i class="glyphicon glyphicon-eye-open"></i>
-                    </a>
-                    <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit', [$$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$]) }}"
-                       class='btn btn-default btn-xs'>
-                        <i class="glyphicon glyphicon-edit"></i>
-                    </a>
-                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
-                </div>
-                {!! Form::close() !!}
-            </td>
-        </tr>
-    @endforeach
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table" id="$MODEL_NAME_PLURAL_CAMEL$-table">
+        <thead>
+            <tr>
+                $FIELD_HEADERS$
+                <th colspan="3">Action222</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($$MODEL_NAME_PLURAL_CAMEL$ as $$MODEL_NAME_CAMEL$)
+                <tr>
+                    $FIELD_BODY$
+                    <td width="120">
+                        <div class='btn-group'>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#show$MODEL_NAME_CAMEL$_{{ $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$ }}" class='btn btn-dark btn-xs'>
+                                <i class="  far fa-eye"></i>
+                            </a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#edit$MODEL_NAME_CAMEL$_{{ $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$ }}"
+                                class='btn btn-success btn/-xs'>
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#delete$MODEL_NAME_CAMEL$_{{ $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$ }}"
+                                class='btn btn-danger btn-xs'>
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+
+
+                <!-- modifier $MODEL_NAME_CAMEL$ N°{{ $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$ }}-->
+                <div id="edit$MODEL_NAME_CAMEL$_{{ $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$ }}" class="modal fade" tabindex="-1"
+                    aria-labelledby="myModalLabel" aria-hidden="true" data-bs-scroll="true">
+                    <div class="modal-dialog">
+                         {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'patch'$FILES$]) !!}
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">Modifier une $MODEL_NAME_PLURAL_CAMEL$</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="card-body">
+
+                                    <div class="row">
+                                        @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+                                    </div>
+
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <div class="modal-footer">
+                                {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary']) !!}
+                                <button class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">Annuler</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                        {!! Form::close() !!}
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+                <!-- afficher $MODEL_NAME_CAMEL$ N°{{ $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$ }} -->
+                <div id="show$MODEL_NAME_CAMEL$_{{ $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$ }}" class="modal fade" tabindex="-1"
+                    aria-labelledby="myModalLabel" aria-hidden="true" data-bs-scroll="true">
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">Nouvel utilisateur</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.show_fields')
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+                <!-- supprimer $MODEL_NAME_CAMEL$ N°{{ $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$ }}-->
+                <div id="delete$MODEL_NAME_CAMEL$_{{ $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$ }}" class="modal fade" tabindex="-1"
+                    aria-labelledby="myModalLabel" aria-hidden="true" data-bs-scroll="true">
+                    <div class="modal-dialog">
+                        {!! Form::open(['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.destroy', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'delete']) !!}
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">Supprimer $MODEL_NAME_PLURAL_CAMEL$</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                    <div class="row">
+                                        <p>Confirmer la suppression</p>
+                                    </div>
+                            </div>
+                            <div class="modal-footer">
+                                {!! Form::submit('Supprimer', ['class' => 'btn btn-danger']) !!}
+                                <button class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">Annuler</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                        {!! Form::close() !!}
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+            @endforeach
+        </tbody>
+    </table>
+</div>
+{{ $$MODEL_NAME_PLURAL_CAMEL$->links() }}
