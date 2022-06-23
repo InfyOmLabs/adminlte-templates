@@ -1,3 +1,6 @@
-<li class="{{ Request::is('users*') ? 'active' : '' }}">
-    <a href="{!! route('users.index') !!}"><i class="fa fa-user"></i><span>Users</span></a>
+<li class="nav-item">
+    <a href="{{ route('users.index') }}" class="nav-link {{ Request::is('users*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-user"></i>
+        <p>Users</p>
+    </a>
 </li>
