@@ -1,3 +1,0 @@
-<div class="card-body">
-                <livewire:posts-table />
-            </div>
