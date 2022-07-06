@@ -5,5 +5,5 @@
 @else
     @{!! Form::label('{{ $fieldName }}', '{{ $fieldTitle }}:') !!}
 @endif
-    @{!! Form::email('{{ $fieldName }}', null, ['class' => 'form-control']) !!}
+    @{!! Form::email('{{ $fieldName }}', null, ['class' => 'form-control'@php if(isset($options)) { echo htmlspecialchars_decode($options); } @endphp]) !!}
 </div>
