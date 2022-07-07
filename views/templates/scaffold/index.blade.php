@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"
-                       href="@{{ route('{!! $config->modelNames->camelPlural !!}.create') }}">
+                       href="@{{ route('{!! $config->prefixes->getRoutePrefixWith('.') !!}{!! $config->modelNames->camelPlural !!}.create') }}">
 @if($config->options->localized)
                          @@lang('crud.add_new')
 @else

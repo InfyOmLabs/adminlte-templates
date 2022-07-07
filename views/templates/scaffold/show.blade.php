@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-default float-right"
-                       href="@{{ route('{!! $config->modelNames->camelPlural  !!}.index') }}">
+                       href="@{{ route('{!! $config->prefixes->getRoutePrefixWith('.') !!}{!! $config->modelNames->camelPlural  !!}.index') }}">
                         Back
                     </a>
                 </div>
@@ -25,7 +25,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    @@include('{{ $config->modelNames->snakePlural }}.show_fields')
+                    @@include('{{ $config->prefixes->getViewPrefixForInclude() }}{{ $config->modelNames->snakePlural }}.show_fields')
                 </div>
             </div>
         </div>

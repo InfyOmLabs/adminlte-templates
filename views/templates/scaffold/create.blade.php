@@ -21,19 +21,19 @@
 
         <div class="card">
 
-            @{!! Form::open(['route' => '{{ $config->modelNames->camelPlural }}.store']) !!}
+            @{!! Form::open(['route' => '{{ $config->prefixes->getRoutePrefixWith('.') }}{{ $config->modelNames->camelPlural }}.store']) !!}
 
             <div class="card-body">
 
                 <div class="row">
-                    @@include('{{ $config->modelNames->snakePlural }}.fields')
+                    @@include('{{ $config->prefixes->getViewPrefixForInclude() }}{{ $config->modelNames->snakePlural }}.fields')
                 </div>
 
             </div>
 
             <div class="card-footer">
                 @{!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="@{{ route('{!! $config->modelNames->camelPlural !!}.index') }}" class="btn btn-default">Cancel</a>
+                <a href="@{{ route('{!! $config->prefixes->getRoutePrefixWith('.') !!}{!! $config->modelNames->camelPlural !!}.index') }}" class="btn btn-default">Cancel</a>
             </div>
 
             @{!! Form::close() !!}
