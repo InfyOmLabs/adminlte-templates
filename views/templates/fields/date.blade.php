@@ -10,10 +10,6 @@
 
 @@push('page_scripts')
     <script type="text/javascript">
-        $('#{{ $fieldName }}').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
-            useCurrent: true,
-            sideBySide: true
-        })
+        $('#{{ $fieldName }}').datepicker()
     </script>
 @@endpush
