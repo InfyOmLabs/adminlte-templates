@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
 @if($config->options->localized)
-                   @lang('models/{{ $config->modelNames->camelPlural }}.plural')
+                    <h1>@@lang('models/{{ $config->modelNames->camelPlural }}.plural')</h1>
 @else
                     <h1>{{ $config->modelNames->humanPlural }}</h1>
 @endif
