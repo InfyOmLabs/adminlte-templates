@@ -1,3 +1,0 @@
-<label class="form-check">
-    {!! Form::radio('$FIELD_NAME$', "$VALUE$", null, ['class' => 'form-check-input']) !!} $LABEL$
-</label>

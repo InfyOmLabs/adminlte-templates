@@ -3,6 +3,7 @@
 namespace InfyOm\AdminLTETemplates;
 
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AdminLTETemplatesServiceProvider extends ServiceProvider
@@ -21,6 +22,14 @@ class AdminLTETemplatesServiceProvider extends ServiceProvider
 
         Paginator::defaultView('adminlte-templates::common.paginator');
         Paginator::defaultSimpleView('adminlte-templates::common.simple_paginator');
+
+        Blade::directive('ocb', function () {
+            return '<?php echo "{{ " ?>';
+        });
+
+        Blade::directive('ccb', function () {
+            return '<?php echo " }}" ?>';
+        });
     }
 
     /**

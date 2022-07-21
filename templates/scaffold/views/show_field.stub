@@ -1,5 +1,0 @@
-<!-- $FIELD_NAME_TITLE$ Field -->
-<div class="col-sm-12">
-    {!! Form::label('$FIELD_NAME$', '$FIELD_NAME_TITLE$:') !!}
-    <p>{{ $$MODEL_NAME_CAMEL$->$FIELD_NAME$ }}</p>
-</div>
