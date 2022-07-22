@@ -5,11 +5,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
+                    <h1>
 @if($config->options->localized)
-                    @@lang('models/{!! $config->modelNames->camelPlural !!}.singular')
+                        @@lang('crud.edit') @@lang('models/{!! $config->modelNames->camelPlural !!}.singular')
 @else
-                    <h1>Edit {{ $config->modelNames->human }}</h1>
+                        Edit {{ $config->modelNames->human }}
 @endif
+                    </h1>
                 </div>
             </div>
         </div>
@@ -31,7 +33,7 @@
 
             <div class="card-footer">
                 @{!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="@{{ route('{!! $config->prefixes->getRoutePrefixWith('.') !!}{!! $config->modelNames->camelPlural !!}.index') }}" class="btn btn-default">Cancel</a>
+                <a href="@{{ route('{!! $config->prefixes->getRoutePrefixWith('.') !!}{!! $config->modelNames->camelPlural !!}.index') }}" class="btn btn-default">@if($config->options->localized) @@lang('crud.cancel') @else Cancel @endif</a>
             </div>
 
             @{!! Form::close() !!}
