@@ -1,4 +1,4 @@
-@{!! Form::open(['route' => ['{!! $config->prefixes->getRoutePrefixWith('.') !!}{{ $config->modelNames->camelPlural }}.destroy', ${{ $config->primaryName }}], 'method' => 'delete']) !!}
+@{!! Form::open(['route' => ['{{ $config->prefixes->getRoutePrefixWith('.') }}{{ $config->modelNames->camelPlural }}.destroy', ${{ $config->primaryName }}], 'method' => 'delete']) !!}
 <div class='btn-group'>
     <a href="@{{ route('{!! $config->prefixes->getRoutePrefixWith('.') !!}{!! $config->modelNames->camelPlural !!}.show', ${!! $config->primaryName !!}) }}" class='btn btn-default btn-xs'>
         <i class="fa fa-eye"></i>
