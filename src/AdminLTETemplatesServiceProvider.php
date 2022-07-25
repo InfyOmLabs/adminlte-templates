@@ -17,11 +17,11 @@ class AdminLTETemplatesServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../views', 'adminlte-templates');
         $this->publishes([
-            __DIR__.'/../views/common' => resource_path('vendor/adminlte-templates/common'),
+            __DIR__.'/../views/common' => resource_path('views/vendor/adminlte-templates/common'),
         ], 'adminlte-views');
 
         $this->publishes([
-            __DIR__.'/../views/templates' => resource_path('vendor/adminlte-templates/templates'),
+            __DIR__.'/../views/templates' => resource_path('views/vendor/adminlte-templates/templates'),
         ], 'adminlte-templates');
 
         Paginator::defaultView('adminlte-templates::common.paginator');
