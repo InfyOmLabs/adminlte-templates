@@ -14,3 +14,4 @@ storage/
 .env
 .env.example
 composer.lock
+**/.DS_Store
