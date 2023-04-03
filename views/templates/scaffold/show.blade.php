@@ -7,9 +7,9 @@
                 <div class="col-sm-6">
                     <h1>
 @if($config->options->localized)
-                        {{ $config->modelNames->human }} Details
+@@lang('models/{!! $config->modelNames->camelPlural !!}.singular') @@lang('crud.detail')
 @else
-                    @@lang('models/{!! $config->modelNames->camelPlural !!}.singular') @@lang('crud.detail')
+{{ $config->modelNames->human }} Details
 @endif
                     </h1>
                 </div>
@@ -17,9 +17,9 @@
                     <a class="btn btn-default float-right"
                        href="@{{ route('{!! $config->prefixes->getRoutePrefixWith('.') !!}{!! $config->modelNames->camelPlural  !!}.index') }}">
                         @if($config->options->localized)
-                            Back
-                        @else
                             @@lang('crud.back')
+                        @else
+                            Back
                         @endif
                     </a>
                 </div>
